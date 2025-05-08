@@ -3,6 +3,8 @@ import { Footer } from "@/components/ui/footer";
 import { PlanningTool } from "@/components/ui/planning-tool";
 import { ComparisonMatrix } from "@/components/ui/comparison-matrix";
 import { ResourceLibrary } from "@/components/ui/resource-library";
+import { RiskAssessmentTool } from "@/components/ui/risk-assessment-tool";
+import { CostCalculator } from "@/components/ui/cost-calculator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
@@ -74,35 +76,25 @@ export default function PlanningTools() {
           </TabsContent>
           
           <TabsContent value="cost-calculator" id="cost-calculator">
-            <div className="max-w-3xl mx-auto">
+            <div>
               <h2 className="text-2xl font-bold mb-6">Disaster Recovery Cost Calculator</h2>
               <p className="text-gray-600 mb-8">
                 Estimate the total cost of ownership for your disaster recovery solution, including implementation,
                 maintenance, and potential downtime costs. This calculator helps you build a comprehensive budget
                 for your DR strategy.
               </p>
-              <div className="bg-gray-50 rounded-lg shadow-md p-6 text-center">
-                <p className="text-gray-600 mb-4">This tool is coming soon!</p>
-                <p className="text-gray-600">
-                  In the meantime, check out our TCO Calculator in the Resource Library below.
-                </p>
-              </div>
+              <CostCalculator />
             </div>
           </TabsContent>
           
           <TabsContent value="risk-assessment" id="risk-assessment">
-            <div className="max-w-3xl mx-auto">
+            <div>
               <h2 className="text-2xl font-bold mb-6">Disaster Recovery Risk Assessment</h2>
               <p className="text-gray-600 mb-8">
                 Identify and prioritize the most critical risks to your infrastructure and data. This assessment
                 tool helps you understand your vulnerabilities and develop a targeted disaster recovery plan.
               </p>
-              <div className="bg-gray-50 rounded-lg shadow-md p-6 text-center">
-                <p className="text-gray-600 mb-4">This tool is coming soon!</p>
-                <p className="text-gray-600">
-                  In the meantime, check out our Risk Assessment Form in the Resource Library below.
-                </p>
-              </div>
+              <RiskAssessmentTool />
             </div>
           </TabsContent>
         </Tabs>
