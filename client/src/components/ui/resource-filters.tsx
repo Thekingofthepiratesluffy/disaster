@@ -7,6 +7,14 @@ import { Search } from "lucide-react";
 import { ResourceCard } from "@/components/ui/resource-card";
 import { ResourceType } from "@/lib/types";
 
+// Define the response type from the API
+interface ResourcesResponse {
+  resources: ResourceType[];
+  total: number;
+  page: number;
+  perPage: number;
+}
+
 const skillLevels = ["Beginner", "Intermediate", "Advanced"];
 const resourceTypes = ["All Types", "Guides", "Templates", "Webinars", "Case Studies"];
 
@@ -15,9 +23,12 @@ export const ResourceFilters = () => {
   const [selectedType, setSelectedType] = useState<string>("All Types");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const { data: resources = [], isLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["/api/resources", selectedSkill, selectedType, searchQuery],
   });
+  
+  // Extract resources array from response, or use empty array if not available
+  const resources = data?.resources || [];
 
   const handleSkillClick = (skill: string) => {
     setSelectedSkill(skill);

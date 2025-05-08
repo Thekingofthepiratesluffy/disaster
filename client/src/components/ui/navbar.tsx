@@ -9,13 +9,13 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 
   return (
     <Link href={href}>
-      <a
-        className={`text-gray-600 hover:text-primary transition font-medium ${
+      <span
+        className={`text-gray-600 hover:text-primary transition font-medium cursor-pointer ${
           isActive ? "text-primary" : ""
         }`}
       >
         {children}
-      </a>
+      </span>
     </Link>
   );
 };
@@ -32,7 +32,7 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
           <Link href="/">
-            <a className="text-primary font-bold text-2xl">DisasterReady</a>
+            <span className="text-primary font-bold text-2xl cursor-pointer">DisasterReady</span>
           </Link>
 
           {/* Mobile Menu Button */}
