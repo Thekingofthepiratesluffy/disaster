@@ -1,4 +1,4 @@
-import { pgTable, text, serial, integer, boolean, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, boolean, timestamp, decimal } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -10,7 +10,7 @@ export const resources = pgTable("resources", {
   content: text("content").notNull(),
   skillLevel: text("skill_level").notNull(),
   type: text("type").notNull(),
-  averageRating: integer("average_rating").notNull(),
+  averageRating: decimal("average_rating", { precision: 3, scale: 1 }).notNull(),
   reviewCount: integer("review_count").notNull(),
   lastUpdated: text("last_updated").notNull(),
   readingTime: integer("reading_time").notNull(),
