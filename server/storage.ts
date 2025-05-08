@@ -82,7 +82,7 @@ export class DatabaseStorage implements IStorage {
           content: "<p>This comprehensive guide covers the fundamental principles of disaster recovery planning...</p>",
           skillLevel: "Beginner",
           type: "Guide",
-          averageRating: 4.2,
+          averageRating: "4.2",
           reviewCount: 42,
           lastUpdated: "2023-06-12",
           readingTime: 25,
@@ -95,7 +95,7 @@ export class DatabaseStorage implements IStorage {
           content: "<p>Learn advanced techniques for optimizing your backup strategies...</p>",
           skillLevel: "Intermediate",
           type: "Guide",
-          averageRating: 4.8,
+          averageRating: "4.8",
           reviewCount: 28,
           lastUpdated: "2023-07-03",
           readingTime: 35,
@@ -108,7 +108,7 @@ export class DatabaseStorage implements IStorage {
           content: "<p>Explore cutting-edge techniques for ensuring zero-downtime in your recovery operations...</p>",
           skillLevel: "Advanced",
           type: "Guide",
-          averageRating: 4.9,
+          averageRating: "4.9",
           reviewCount: 16,
           lastUpdated: "2023-08-17",
           readingTime: 45,
@@ -121,7 +121,7 @@ export class DatabaseStorage implements IStorage {
           content: "<p>Master the language of backup and recovery with this comprehensive terminology guide...</p>",
           skillLevel: "Beginner",
           type: "Guide",
-          averageRating: 3.8,
+          averageRating: "3.8",
           reviewCount: 31,
           lastUpdated: "2023-05-22",
           readingTime: 15,
@@ -157,7 +157,9 @@ export class DatabaseStorage implements IStorage {
       ];
       
       // Insert resources
-      await Promise.all(resourcesData.map(resource => db.insert(resources).values(resource)));
+      for (const resource of resourcesData) {
+        await db.insert(resources).values(resource);
+      }
       
       // Seed strategy comparisons
       const strategiesData: Omit<StrategyComparisonType, "id">[] = [
@@ -192,7 +194,9 @@ export class DatabaseStorage implements IStorage {
       ];
       
       // Insert strategy comparisons
-      await Promise.all(strategiesData.map(strategy => db.insert(strategyComparisons).values(strategy)));
+      for (const strategy of strategiesData) {
+        await db.insert(strategyComparisons).values(strategy);
+      }
       
       // Seed downloadable resources
       const downloadablesData: Omit<DownloadableResourceType, "id">[] = [
@@ -223,7 +227,9 @@ export class DatabaseStorage implements IStorage {
       ];
       
       // Insert downloadable resources
-      await Promise.all(downloadablesData.map(resource => db.insert(downloadableResources).values(resource)));
+      for (const resource of downloadablesData) {
+        await db.insert(downloadableResources).values(resource);
+      }
       
       // Seed testimonials
       const testimonialsData: Omit<TestimonialType, "id">[] = [
@@ -251,7 +257,9 @@ export class DatabaseStorage implements IStorage {
       ];
       
       // Insert testimonials
-      await Promise.all(testimonialsData.map(testimonial => db.insert(testimonials).values(testimonial)));
+      for (const testimonial of testimonialsData) {
+        await db.insert(testimonials).values(testimonial);
+      }
       
       DatabaseStorage.hasSeededData = true;
       console.log("Database seeded successfully");
