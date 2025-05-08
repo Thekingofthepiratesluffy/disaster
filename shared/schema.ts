@@ -10,7 +10,7 @@ export const resources = pgTable("resources", {
   content: text("content").notNull(),
   skillLevel: text("skill_level").notNull(),
   type: text("type").notNull(),
-  averageRating: decimal("average_rating", { precision: 3, scale: 1 }).notNull(),
+  averageRating: integer("average_rating").notNull(),
   reviewCount: integer("review_count").notNull(),
   lastUpdated: text("last_updated").notNull(),
   readingTime: integer("reading_time").notNull(),
