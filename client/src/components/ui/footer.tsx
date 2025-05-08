@@ -28,23 +28,23 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/resources?level=beginner">
-                  <a className="text-gray-300 hover:text-white transition">Beginner Guides</a>
+                <Link href="/resources?level=beginner" className="text-gray-300 hover:text-white transition">
+                  Beginner Guides
                 </Link>
               </li>
               <li>
-                <Link href="/resources?level=intermediate">
-                  <a className="text-gray-300 hover:text-white transition">Intermediate Resources</a>
+                <Link href="/resources?level=intermediate" className="text-gray-300 hover:text-white transition">
+                  Intermediate Resources
                 </Link>
               </li>
               <li>
-                <Link href="/resources?level=advanced">
-                  <a className="text-gray-300 hover:text-white transition">Advanced Techniques</a>
+                <Link href="/resources?level=advanced" className="text-gray-300 hover:text-white transition">
+                  Advanced Techniques
                 </Link>
               </li>
               <li>
-                <Link href="/resources?type=template">
-                  <a className="text-gray-300 hover:text-white transition">Templates & Tools</a>
+                <Link href="/resources?type=template" className="text-gray-300 hover:text-white transition">
+                  Templates & Tools
                 </Link>
               </li>
             </ul>
@@ -54,23 +54,23 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">Planning Tools</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/planning-tools#strategy-builder">
-                  <a className="text-gray-300 hover:text-white transition">Strategy Builder</a>
+                <Link href="/planning-tools#strategy-builder" className="text-gray-300 hover:text-white transition">
+                  Strategy Builder
                 </Link>
               </li>
               <li>
-                <Link href="/planning-tools#comparison-matrix">
-                  <a className="text-gray-300 hover:text-white transition">Comparison Matrix</a>
+                <Link href="/planning-tools#comparison-matrix" className="text-gray-300 hover:text-white transition">
+                  Comparison Matrix
                 </Link>
               </li>
               <li>
-                <Link href="/planning-tools#cost-calculator">
-                  <a className="text-gray-300 hover:text-white transition">Cost Calculator</a>
+                <Link href="/planning-tools#cost-calculator" className="text-gray-300 hover:text-white transition">
+                  Cost Calculator
                 </Link>
               </li>
               <li>
-                <Link href="/planning-tools#risk-assessment">
-                  <a className="text-gray-300 hover:text-white transition">Risk Assessment</a>
+                <Link href="/planning-tools#risk-assessment" className="text-gray-300 hover:text-white transition">
+                  Risk Assessment
                 </Link>
               </li>
             </ul>
