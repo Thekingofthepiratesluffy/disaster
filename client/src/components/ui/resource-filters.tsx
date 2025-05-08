@@ -23,7 +23,7 @@ export const ResourceFilters = () => {
   const [selectedType, setSelectedType] = useState<string>("All Types");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading } = useQuery<ResourcesResponse>({
     queryKey: ["/api/resources", selectedSkill, selectedType, searchQuery],
   });
   
